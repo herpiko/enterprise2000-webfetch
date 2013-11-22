@@ -64,13 +64,11 @@ echo "<strong>FOR TESTING PURPOSE. Date : ".$tanggal_awal.". <br>Silakan cek abs
 $hasil=array();
 $j=0;
 
-//pindah ke array berurutan
+//pindahkan ke array baru yang berurutan tanpa data kosong
 for ($i=0; $i < 150; $i++) { 
-//unset($absen[$i][name]);
 	foreach ($absen[$i] as $key => $value) {
 		$x=substr($key,2,1);
 		$y=substr($key,11,1);
-		//echo $x;
 		if ($x==':') {
 			if ($y=="0") {
 				$check="Check In";
@@ -90,10 +88,8 @@ for ($i=0; $i < 150; $i++) {
 
 
 for ($i=0; $i < 150; $i++) { 
-//unset($absen[$i][name]);
 		$x=substr($absen[$i][name],2,1);
 		$y=substr($absen[$i][name],11,1);
-		//echo $x;
 		if ($x==':') {
 			if ($y=="0") {
 				$check="Check In";
@@ -149,14 +145,10 @@ echo "</table>";
 echo "</td>";
 echo "</tr></table>";
 
-//print_r($absen);
-// echo "<br><br>";
-// echo $absen[106][name];
 echo "<br><br>Pure fetch data :<br>";
 print_r($absen);
-echo "<br><br>Rearranged fetch data: <br> ";
+echo "<br><br>Rearranged fetch data : <br> ";
 print_r($hasil);
-//echo $tanggal_awal;
 ?>
 
 </div>
